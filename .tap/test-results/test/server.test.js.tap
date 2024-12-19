@@ -1,0 +1,48 @@
+TAP version 14
+# Subtest: POST /tasks
+    not ok 1 - test unfinished
+      ---
+      at:
+        fileName: test/server.test.js
+        lineNumber: 6
+        columnNumber: 5
+        typeName: Object
+      stack: |
+        Object.<anonymous> (test/server.test.js:6:5)
+      test: POST /tasks
+      source: |
+        const server = supertest(app);
+      
+        tap.test("POST /tasks", async (t) => {
+        ----^
+          const newTask = {
+            title: "New Task",
+      ...
+    
+    1..1
+not ok 1 - POST /tasks # time=160.25ms
+  ---
+  at:
+    fileName: test/server.test.js
+    lineNumber: 6
+    columnNumber: 5
+    typeName: Object
+  source: |
+    const server = supertest(app);
+  
+    tap.test("POST /tasks", async (t) => {
+    ----^
+      const newTask = {
+        title: "New Task",
+  ...
+
+not ok 2 - child test left in queue: POST /tasks with invalid data
+not ok 3 - child test left in queue: GET /tasks
+not ok 4 - child test left in queue: GET /tasks/:id
+not ok 5 - child test left in queue: GET /tasks/:id with invalid id
+not ok 6 - child test left in queue: PUT /tasks/:id
+not ok 7 - child test left in queue: PUT /tasks/:id with invalid id
+not ok 8 - child test left in queue: PUT /tasks/:id with invalid data
+not ok 9 - child test left in queue: DELETE /tasks/:id
+not ok 10 - child test left in queue: DELETE /tasks/:id with invalid id
+1..10
